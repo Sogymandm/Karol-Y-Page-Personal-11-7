@@ -1,0 +1,299 @@
+
+/* Estilos base para la página personal de Karol */
+:root{
+	/* Paleta refinada pastel: verdes y amarillos suaves */
+	--bg: #fbfdf9;           /* fondo muy claro */
+	--muted: #606157;        /* texto secundario */
+	--accent: #dff6e6;       /* verde muy suave */
+	--accent-2: #fff8db;     /* amarillo cremoso */
+	--accent-dark: #2f5f3a;  /* verde oscuro (texto) */
+	--card-bg: #ffffff;      /* tarjetas */
+	--glass: rgba(255,255,255,0.6);
+	--shadow: rgba(38,40,35,0.06);
+	--container-max:1100px;
+	--radius-lg:16px;
+	--radius-md:12px;
+}
+
+*{
+	user-select: none;
+	box-sizing:border-box
+}
+
+html,body{
+	height:100%;
+	margin:0;
+	font-family: "Momo Trust Sans", sans-serif;
+	background:var(--bg);color:#111;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale
+}
+
+.container{max-width:var(--container-max);margin:0 auto;padding:2rem 1rem}
+
+/* Header y navegación */
+.site-header{background:linear-gradient(90deg, rgba(191,231,199,0.95), rgba(255,243,196,0.95)); color:var(--accent-dark); padding:0.6rem 0; position:sticky; top:0; z-index:30; backdrop-filter:blur(6px); box-shadow:0 6px 18px var(--shadow)}
+.header-inner{display:flex;flex-direction:column;gap:.25rem;align-items:flex-start}
+.site-title{margin:0;font-size:1.2rem;font-weight:700;color:var(--accent-dark)}
+.site-subtitle{display:none}
+.nav-buttons{display:none}
+.btn{display:inline-block;padding:.45rem .8rem;border-radius:999px;background:transparent;color:var(--accent-dark);text-decoration:none;font-weight:600;border:1px solid transparent;transition:all .22s cubic-bezier(.2,.9,.2,1);box-shadow:none}
+.btn:hover{transform:translateY(-2px);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:var(--accent-dark)}
+.btn:focus{outline:3px solid rgba(58,95,58,0.12);outline-offset:3px}
+
+.section{padding:2.25rem 0;border-bottom:1px solid rgba(100,100,90,0.06)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;align-content:center;padding:1rem 0;min-height:72vh;justify-items:center}
+.hero-figure{margin:0;display:flex;justify-content:center;max-width:560px;width:100%}
+.hero-image{width:100%;height:auto;max-height:460px;border-radius:var(--radius-lg);display:block;object-fit:cover;box-shadow:0 12px 40px var(--shadow);transition:transform .45s cubic-bezier(.2,.9,.2,1),filter .35s ease}
+.hero-image:hover{transform:translateY(-8px) scale(1.01);filter:brightness(1.02)}
+.hero-caption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+.hero-title{margin:0;font-size:2.2rem;line-height:1.05;color:var(--accent-dark);background:transparent;padding:.15rem .6rem;border-radius:6px}
+.hero-subtitle{margin:.6rem 0 1rem 0;color:var(--muted);font-weight:600}
+.hero-text{text-align:center;display:flex;flex-direction:column;justify-content:center}
+.hero-text p{line-height:1.7;color:var(--muted);max-width:52rem;margin:0 auto}
+
+/* Center main titles */
+h2, .hero-title {text-align:center}
+
+.hero-buttons{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.1rem}
+.hero-buttons .primary-cta{padding:.8rem 1.1rem;border-radius:14px;font-size:1rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:var(--accent-dark);box-shadow:0 14px 36px rgba(38,40,35,0.06);border:1px solid rgba(0,0,0,0.04);position:relative;overflow:hidden}
+.hero-buttons .primary-cta::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);width:140%;height:140%;background:radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.02) 40%, transparent 60%);opacity:0;transition:transform .45s ease,opacity .45s ease}
+.hero-buttons .primary-cta:hover::before{transform:translate(-50%,-50%) scale(1);opacity:1}
+.hero-buttons .primary-cta:hover{transform:translateY(-4px)}
+
+/* Video */
+/* ==== VIDEO CONTAINER ==== */
+.video-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  /* Fixed viewing frame so video keeps same visible size regardless of its intrinsic aspect */
+  height: 500px;
+  /* CSS variable to control slight zoom/scale of the video: 1 = normal, <1 = zoom out, >1 = zoom in */
+  --video-scale: 0.98;
+  margin: 2rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #fafafa, #e3e3e3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* ==== VIDEO ==== */
+.video-container video {
+  /* Fill the fixed frame and crop when necessary so the visible size stays constant.
+     object-fit: cover preserves aspect ratio and ensures the frame is fully filled. */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* control what area of the video is visible (center by default) */
+  object-position: center center;
+  /* small scale tweak to reduce/increase perceived zoom; adjustable via --video-scale */
+  transform: scale(var(--video-scale));
+  /* ensure video is above the decorative background layer */
+  position: relative;
+  z-index: 1;
+  /* remove inner radius so container handles rounding (avoids double border-radius artifacts) */
+  border-radius: 0;
+  display: block;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* decorative background behind the video so small scale reveals a neutral color */
+.video-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000; /* change to a different color if you prefer lighter edges */
+  z-index: 0;
+}
+
+.video-container:hover video {
+  filter: brightness(1.05);
+}
+
+/* ==== DESCRIPCIÓN DEL VIDEO ==== */
+.h3-video {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==== OVERLAY (pantalla previa) ==== */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.video-overlay p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==== BOTÓN DEL OVERLAY ==== */
+#playButton {
+  background: linear-gradient(135deg, #ffc3a0, #ffafbd);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 175, 189, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#playButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 175, 189, 0.6);
+}
+
+/* ==== HIDE OVERLAY WHEN VIDEO IS VISIBLE ==== */
+.video-container video.active {
+  opacity: 1;
+}
+
+.video-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+iframe {
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Descripción debajo del video */
+.h3-video {
+  font-size: 1.15rem;
+  color: #2a3c5f;
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+/* About */
+.about-card{background:var(--card-bg);border-radius:var(--radius-md);padding:1.6rem;box-shadow:0 10px 30px var(--shadow);border:1px solid rgba(80,80,70,0.03)}
+.about-card h3{margin-top:1rem}
+
+/* interacciones en tarjetas */
+.info-card, .about-card{transition:transform .25s ease,box-shadow .25s ease}
+.info-card:hover, .about-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(50,50,45,0.08)}
+
+/* Mejor contraste para encabezados de sección */
+h2{color:var(--accent-dark);margin-bottom:1rem}
+
+/* Tarjetas más definidas para galerías */
+.grid figure{background:var(--card-bg);padding:.6rem;border-radius:12px;box-shadow:0 8px 18px var(--shadow);border:1px solid rgba(80,80,70,0.03);position:relative;overflow:hidden}
+.grid img{width:100%;height:170px;object-fit:cover;border-radius:8px;transition:transform .45s cubic-bezier(.2,.9,.2,1),filter .35s ease}
+.grid figcaption{padding-top:.45rem}
+
+/* overlay y detalle en hover */
+.grid figure::after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(255,255,255,0) 30%, rgba(0,0,0,0.06));opacity:0;transition:opacity .25s ease}
+.grid figure:hover::after{opacity:1}
+
+/* destacar la imagen del mapa */
+.grid .featured{grid-column:span 2;grid-row:span 2}
+.grid .featured img{height:100%;max-height:520px;object-position:center;border-radius:var(--radius-lg)}
+
+/* darle un "wrap" visual con leves rotaciones en las miniaturas */
+.grid figure:not(.featured):nth-of-type(2){transform:rotate(-0.9deg)}
+.grid figure:not(.featured):nth-of-type(3){transform:rotate(0.9deg)}
+.grid figure:not(.featured):nth-of-type(4){transform:rotate(-0.6deg)}
+.grid figure{transition:transform .35s ease,box-shadow .25s ease}
+.grid figure:hover{transform:translateY(-10px) rotate(0deg);box-shadow:0 20px 40px rgba(38,40,35,0.08)}
+
+/* About grid: tarjetas pequeñas */
+/* About grid: summary + info grid */
+.about-grid{display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;grid-auto-rows:1fr;align-items:stretch}
+.info-card{background:var(--card-bg);border-radius:var(--radius-md);padding:1rem;box-shadow:0 8px 18px var(--shadow);border:1px solid rgba(80,80,70,0.03);display:flex;flex-direction:column}
+.info-card h4{margin:0 0 .4rem 0;color:var(--accent-dark)}
+.info-card p{margin:0;color:var(--muted);line-height:1.5}
+.about-card{grid-column:1 / -1}
+
+/* Centrar footer text */
+.site-footer p{text-align:center;margin:0}
+
+/* Mejoras de accesibilidad visual - foco */
+:focus{outline: none}
+.focus-ring:focus{outline:3px solid rgba(47,95,58,0.14);outline-offset:3px;border-radius:8px}
+
+@media (max-width:900px){
+	.info-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+	.info-grid{grid-template-columns:1fr}
+}
+
+/* Galería */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;grid-auto-rows:1fr}
+.grid figure{margin:0}
+.grid img:hover{transform:scale(1.03);filter:brightness(.99)}
+/* asegurar buen espacio */
+.grid{gap:1.25rem}
+
+.site-footer{padding:1.25rem 0;background:linear-gradient(180deg, rgba(255,243,196,0.4), rgba(191,231,199,0.2));margin-top:2.5rem}
+
+/* Layout centrado y texto */
+.hero-text{padding:0 0.5rem}
+
+/* Animaciones (reveal on scroll) */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.2,1)}
+.is-visible{opacity:1;transform:none}
+
+/* Botón principal */
+.primary-cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:var(--accent-dark);padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px var(--shadow);transition:transform .18s ease}
+.primary-cta:hover{transform:translateY(-3px)}
+
+/* Responsive */
+@media (max-width:900px){
+	.hero{grid-template-columns:1fr;padding:1rem 0;min-height:60vh}
+	.grid{grid-template-columns:repeat(2,1fr)}
+	.nav-buttons{justify-content:center}
+}
+@media (max-width:520px){
+	.grid{grid-template-columns:1fr}
+	.site-title{font-size:1.25rem}
+	.hero{min-height:54vh;gap:1rem}
+	.hero-image{max-height:340px}
+	.hero-text p{max-width:36rem;padding:0 1rem}
+}
+
+/* Pequeños ajustes para accesibilidad */
+a{color:var(--accent)}
+img{max-width:100%;display:block}
+
+/* Preferencias de usuarios que reduzcan movimiento */
+@media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+}
+
+/* scroll suave para navegación interna */
+html{scroll-behavior:smooth}

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Karol Yuleiny Valencia — Página personal</title>
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Momo+Trust+Sans:wght@200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Special+Gothic:wght@400..700&family=Spinnaker&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<!-- Header decorativo: el nombre y navegación están dentro de la presentación -->
+			</div>
+		</header>
+
+		<main class="container">
+			<!-- Presentación -->
+			<section id="presentacion" class="section hero reveal">
+				<figure class="hero-figure">
+					<img loading="lazy" src="Imagenes/Imagen_P_1.png" alt="Foto de presentación de Karol" class="hero-image" />
+					<figcaption class="hero-caption"></figcaption>
+				</figure>
+				<div class="hero-text">
+					<h1 class="hero-title">Karol Yuleiny Valencia</h1>
+					<p class="hero-subtitle">Soy afrocolombiana — orgullosa de mis raíces del Pacífico</p>
+					<p>
+						Soy Karol Yuleiny Valencia. En esta página encontrarás información sobre mi identidad,
+						cultura y territorio. Aquí comparto quién soy, de dónde vengo y qué defiendo.
+					</p>
+					<div class="hero-buttons" role="navigation" aria-label="Accesos rápidos">
+						<a class="primary-cta" href="#video">Ver video</a>
+						<a class="primary-cta" href="#sobre-mi">Sobre mí</a>
+						<a class="primary-cta" href="#galeria">Galería</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Video -->
+			<section id="video" class="section reveal">
+				<h2>Video - Podcast</h2>
+				<div class="video-container">
+					<div class="video-overlay" id="videoOverlay">
+						<p>¿Deseas ver el video?</p>
+						<button id="playButton">Ver Video</button>
+					</div>
+					<video id="personalVideo" controls playsinline>
+						<source src="Videos/Video_KarolY.mp4" type="video/mp4">
+					</video>
+					<h4 class="h3-video">
+						En este caso entreviste a un compañero del colegio, para poder comprender o conocer un poco más acerca de como es y de él como afrocolombiano.
+					</h4>
+				</div>
+			</section>
+
+			<!-- Sobre mí (contenido de info.txt) -->
+			<section id="sobre-mi" class="section reveal">
+				<h2>Sobre mí</h2>
+				<!-- Grid de tarjetas: una tarjeta resumen y pequeñas tarjetas informativas -->
+				<div class="about-grid">
+					<!-- Tarjeta resumen grande -->
+					<div class="about-card info-card">
+						<h3>Karol Yuleiny Valencia</h3>
+						<p class="muted"><strong>Afrocolombiana</strong> — Buenaventura, Valle del Cauca</p>
+						<p>Me gusta el folclor y estoy orgullosa de mi raíz, etnia e identidad. Aquí comparto mi historia y lo que defiendo.</p>
+					</div>
+					<!-- Pequeñas tarjetas con la info separada -->
+					<div class="info-grid">
+						<div class="info-card">
+							<h4>Identidad</h4>
+							<p>Soy una persona afrodescendiente, piel morena; valoro y vivo con orgullo mi herencia.</p>
+						</div>
+						<div class="info-card">
+							<h4>¿Cómo la fortalezco?</h4>
+							<p>Reconociendo de dónde soy, celebrando tradiciones y transmitiendo mi cultura a la comunidad.</p>
+						</div>
+						<div class="info-card">
+							<h4>No toleraría</h4>
+							<p>Actos de racismo, burlas, insultos o la negación de oportunidades para mi comunidad.</p>
+						</div>
+						<div class="info-card">
+							<h4>Ley 70</h4>
+							<p>Es la ley que reconoce, protege y garantiza los derechos de las comunidades negras en Colombia.</p>
+						</div>
+						<div class="info-card">
+							<h4>Ancestralidad</h4>
+							<p>Defender y practicar las raíces culturales y el legado de los antepasados como base de identidad.</p>
+						</div>
+						<div class="info-card">
+							<h4>Territorio</h4>
+							<p>El territorio es memoria, cultura y libertad; es esencial para la identidad afrocolombiana.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Galería y Mapa -->
+			<section id="galeria" class="section reveal">
+				<h2>Galería: Mapa y cultura</h2>
+				<div class="grid">
+					<figure class="featured">
+						<img loading="lazy" src="Imagenes/Imagen_1.png" alt="Mapa de Buenaventura" />
+						<figcaption>Mapa — Buenaventura, Valle del Cauca</figcaption>
+					</figure>
+					<figure>
+						<img loading="lazy" src="Imagenes/Ballenas_1.png" alt="Expresión cultural 1" />
+						<figcaption>Folclor y música</figcaption>
+					</figure>
+					<figure>
+						<img loading="lazy" src="Imagenes/Gastronomia_BN.png" alt="Expresión cultural 2" />
+						<figcaption>Gastronomía tradicional</figcaption>
+					</figure>
+					<figure>
+						<img loading="lazy" src="Imagenes/faro.png" alt="Expresión cultural 3" />
+						<figcaption>Artesanía y vestimenta</figcaption>
+					</figure>
+					<figure>
+						<img loading="lazy" src="Imagenes/Playa_Ladrilleros.png" alt="Expresión cultural 4" />
+						<figcaption>Rituales y celebraciones</figcaption>
+					</figure>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p><span id="year"></span> Karol Y. Valencia — Página personal - Grado 11-7</p>
+			</div>
+		</footer>
+
+		<script>
+			// Actualiza el año automáticamente
+			document.getElementById('year').textContent = new Date().getFullYear();
+
+			// Minimal fallback reveal (main.js adds a nicer staggered reveal)
+			if (!('IntersectionObserver' in window)) {
+				document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+			}
+		</script>
+		<script src="main.js" defer></script>
+	</body>
+</html>
